@@ -348,7 +348,7 @@ dependencies = [
  "html5ever 0.25.1",
  "jni",
  "lazy_static",
- "markup5ever_rcdom",
+ "markup5ever_rcdom 0.1.0",
  "percent-encoding 2.1.0",
  "regex",
 ]
@@ -460,6 +460,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7fb9b38af92608140b86b693604b9ffcc5824240a484d1ecd4795bacb2fe88f3"
 
 [[package]]
+name = "linkify"
+version = "0.9.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "96dd5884008358112bc66093362197c7248ece00d46624e2cf71e50029f8cff5"
+dependencies = [
+ "memchr",
+]
+
+[[package]]
 name = "log"
 version = "0.4.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -530,7 +539,19 @@ dependencies = [
  "html5ever 0.25.1",
  "markup5ever 0.10.0",
  "tendril",
- "xml5ever",
+ "xml5ever 0.16.1",
+]
+
+[[package]]
+name = "markup5ever_rcdom"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b9521dd6750f8e80ee6c53d65e2e4656d7de37064f3a7a5d2d11d05df93839c2"
+dependencies = [
+ "html5ever 0.26.0",
+ "markup5ever 0.11.0",
+ "tendril",
+ "xml5ever 0.17.0",
 ]
 
 [[package]]
@@ -567,8 +588,10 @@ dependencies = [
  "html2md",
  "js-sys",
  "lazy_static",
+ "linkify",
  "readability",
  "scraper",
+ "select",
  "serde",
  "serde_json",
  "thiserror",
@@ -1058,6 +1081,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "select"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6f9da09dc3f4dfdb6374cbffff7a2cffcec316874d4429899eefdc97b3b94dcd"
+dependencies = [
+ "bit-set",
+ "html5ever 0.26.0",
+ "markup5ever_rcdom 0.2.0",
+]
+
+[[package]]
 name = "selectors"
 version = "0.22.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1514,6 +1548,17 @@ dependencies = [
  "mac",
  "markup5ever 0.10.0",
  "time",
+]
+
+[[package]]
+name = "xml5ever"
+version = "0.17.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4034e1d05af98b51ad7214527730626f019682d797ba38b51689212118d8e650"
+dependencies = [
+ "log",
+ "mac",
+ "markup5ever 0.11.0",
 ]
 
 [[package]]

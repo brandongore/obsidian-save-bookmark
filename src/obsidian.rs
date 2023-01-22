@@ -142,7 +142,7 @@ extern "C" {
 }
 
 #[wasm_bindgen(
-    inline_js = "export function plugin() { return app.plugins.plugins['extract-url']; }"
+    inline_js = "export function plugin() { return app.plugins.plugins['save-bookmark']; }"
 )]
 extern "C" {
     pub fn plugin() -> Plugin;

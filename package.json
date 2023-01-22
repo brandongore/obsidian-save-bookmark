@@ -1,13 +1,13 @@
 {
-  "name": "obsidian-extract-url",
+  "name": "obsidian-save-bookmark",
   "version": "0.1.0",
-  "description": "Extract url converting content into markdown",
+  "description": "Save bookmarks to markdown",
   "main": "main.js",
   "scripts": {
     "esbuild-dev": "esbuild index.js --platform=node --external:obsidian --external:electron --loader:.wasm=base64 --bundle --outfile=main.js",
     "esbuild-release": "esbuild index.js --platform=node --external:obsidian --external:electron --loader:.wasm=base64 --bundle --outfile=main.js --minify",
-    "build": "export RUSTFLAGS=--cfg=web_sys_unstable_apis && wasm-pack build --target web && yarn esbuild-release",
-    "dev": "export RUSTFLAGS=--cfg=web_sys_unstable_apis && wasm-pack build --dev --target web && yarn esbuild-dev"
+    "build": "set RUSTFLAGS=--cfg=web_sys_unstable_apis && wasm-pack build --target web && npm run esbuild-release",
+    "dev": "set RUSTFLAGS=--cfg=web_sys_unstable_apis && wasm-pack build --dev --target web && npm run esbuild-dev"
   },
   "keywords": [],
   "author": "",

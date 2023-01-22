@@ -16,6 +16,11 @@ crate-type = ["cdylib"]
 [profile.release]
 lto = true
 opt-level = 'z'
+features = ["web_sys_unstable_apis"]
+
+[profile.dev]
+features = ["web_sys_unstable_apis"]
+
 
 [dependencies]
 wasm-bindgen = { version = "^0.2", features = ["serde-serialize"] }
@@ -32,17 +37,11 @@ futures = "^0.3.14"
 fancy-regex = "0.10.0"
 lazy_static = "1.4.0"
 scraper = "0.13.0"
+web-sys = { version = "0.3.57", features = ["Element", "Document", "EventTarget", "Window","Clipboard","Navigator","console", "Permissions"]}
+select = "0.6.0"
+linkify = "0.9.0"
 
 [dependencies.readability]
 git = "https://github.com/trashhalo/readability.git"
 version = "^0"
 default-features = false
-
-[dependencies.web-sys]
-version = "0.3.57"
-features = [
-  'Window',
-  'console',
-  'Navigator',
-  'Clipboard'
-]

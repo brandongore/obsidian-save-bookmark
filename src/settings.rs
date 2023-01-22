@@ -16,14 +16,14 @@ extern "C" {
 
 #[derive(Serialize, Deserialize, Clone)]
 pub struct Settings {
-    pub archive_path: Option<String>,
+    pub bookmark_path: Option<String>,
 }
 
 impl Settings {
-    pub fn archive_path(self: &Self) -> &str {
-        match &self.archive_path {
+    pub fn bookmark_path(self: &Self) -> &str {
+        match &self.bookmark_path {
             Some(s) => s,
-            None => "archive",
+            None => "bookmarks",
         }
     }
 }
@@ -53,7 +53,7 @@ pub async fn load_settings(plugin: &Plugin) -> Result<Settings, SettingsError> {
     let value: Option<Settings> = JsFuture::from(plugin.load_data()).await?.into_serde()?;
     Ok(match value {
         Some(settings) => settings,
-        None => Settings { archive_path: None },
+        None => Settings { bookmark_path: None },
     })
 }
 
