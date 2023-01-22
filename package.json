@@ -1,6 +1,6 @@
 {
   "name": "obsidian-save-bookmark",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "Save bookmarks to markdown",
   "main": "main.js",
   "scripts": {
